@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Georgs Ops Center</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="logo"><b>Georgs</b>//OPS</b>//<i>CENTER</i></div>
+      <span class="pill-info" id="live" hidden title="Dev mode: the page follows your server"><span class="dot" id="live-dot"></span><span id="live-text"></span></span>
+      <div class="spacer"></div>
+      <span class="pill-info" id="who"></span>
+      <button class="btn small" id="auth-btn" hidden>Sign in</button>
+    </header>
+
+    <nav class="nav" id="nav">
+      <a href="#/mission" data-view="mission" id="nav-mission" hidden><span class="ico">&#9678;</span>Mission Control</a>
+      <a href="#/hosts" data-view="hosts"><span class="ico">&#9638;</span>Hosts</a>
+      <a href="#/system" data-view="system"><span class="ico">&#9881;</span>This machine</a>
+      <a href="#/traffic" data-view="traffic" id="nav-traffic" hidden><span class="ico">&#8645;</span>Traffic</a>
+      <a href="#/admin" data-view="admin" id="nav-admin" hidden><span class="ico">&#9812;</span>Admin</a>
+      <div class="sep"></div>
+      <a href="/docs" id="nav-docs" target="_blank" rel="noopener" hidden><span class="ico">&#123;&#125;</span>API docs</a>
+      <div class="foot">frontend: ready-made<br>backend: <b>you</b></div>
+    </nav>
+
+    <main id="view" tabindex="-1"></main>
+  </div>
+
+  <dialog id="dlg"></dialog>
+  <script src="/static/app.js"></script>
+</body>
+</html>

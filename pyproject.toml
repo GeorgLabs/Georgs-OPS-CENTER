@@ -1,0 +1,25 @@
+[project]
+name = "opscenter"
+version = "0.1.0"
+description = "Ops Center - a tiny self-hosted server monitor (FastAPI + SQLModel)"
+requires-python = ">=3.11"
+
+# lets `fastapi dev` find the app without any arguments
+[tool.fastapi]
+entrypoint = "app.main:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+# E/F = pycodestyle + pyflakes, B = likely bugs, UP = modern syntax, S = security (bandit rules)
+select = ["E", "F", "B", "UP", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"app/dev/*" = ["S101", "S105", "S106", "S311", "E501"]
+"tests/*" = ["S101", "S105", "S106"]
+"agent/*" = ["S310", "S603"]
